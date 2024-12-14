@@ -1,5 +1,4 @@
 #pragma once
-
 class String
 {
 private:
@@ -14,7 +13,7 @@ public:
 
 	String(const String& other);
 
-	String operator=(const String& other);
+	String& operator=(const String& other);
 	String operator+(const String& other) const;
 	String& operator+=(const String& other);
 	const char& operator[](int index) const;
@@ -23,9 +22,9 @@ public:
 	bool operator!=(const String& other) const;
 	bool operator>(const String& other) const;
 	bool operator<(const String& other) const;
+	String& operator=(String&& other) noexcept;
 
-
-
+	String(String&& other) noexcept;
 
 	~String();
 	
